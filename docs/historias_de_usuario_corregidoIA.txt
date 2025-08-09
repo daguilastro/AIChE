@@ -1,0 +1,140 @@
+# Historias de Usuario - Página AIChE (Versión 2)
+
+## DEFINICIÓN DE ROLES
+- **Visitante**: Cualquiera que entre sin registrarse
+- **Usuario**: Integrante oficial registrado  
+- **Admin**: Coordinador con permisos de gestión
+
+---
+
+## HISTORIAS DE VISITANTE
+
+### US-001: Información institucional
+**Como** visitante  
+**Quiero** conocer información básica sobre AIChE (misión, visión, ubicación, actividades)  
+**Para** entender qué es la organización y si me interesa participar  
+
+---
+
+### US-002: Visualizar eventos y actividades
+**Como** visitante  
+**Quiero** ver actividades realizadas y eventos programados  
+**Para** conocer la dinámica del grupo y planificar mi participación  
+
+---
+
+### US-003: Explorar beneficios de membresía
+**Como** visitante  
+**Quiero** conocer los beneficios de pertenecer a AIChE (corresponsabilidad, PAE, becas internacionales, certificados, networking, Canva Pro)  
+**Para** evaluar el valor de unirme al grupo  
+
+---
+
+### US-004: Acceder a información de contacto
+**Como** visitante interesado  
+**Quiero** contactar fácilmente con coordinadores a través de correo electrónico  
+**Para** resolver dudas específicas sobre el grupo  
+
+---
+
+### US-005: Ver galería multimedia
+**Como** visitante  
+**Quiero** ver el registro fotográfico de actividades realizadas  
+**Para** conocer mejor el ambiente y tipo de eventos del grupo  
+
+---
+
+### US-006: Acceder a redes sociales
+**Como** visitante  
+**Quiero** acceder rápidamente a Instagram y la comunidad de WhatsApp de AIChE  
+**Para** seguir sus actualizaciones y unirme a la comunicación del grupo  
+
+---
+
+### US-007: Compartir contenido
+**Como** visitante  
+**Quiero** compartir eventos o noticias en mis redes sociales  
+**Para** promocionar las actividades del grupo  
+
+---
+
+## HISTORIAS DE USUARIO REGISTRADO
+
+### US-008: Registro a eventos
+**Como** usuario  
+**Quiero** registrarme eficientemente a actividades  
+**Para** confirmar mi participación y recibir información relevante del evento  
+
+---
+
+### US-009: Gestión de perfil personal
+**Como** usuario  
+**Quiero** acceder y modificar mi información personal, incluyendo historial de participación, comentarios y certificados  
+**Para** mantener actualizado mi perfil y hacer seguimiento de mi trayectoria  
+
+---
+
+### US-010: Verificación de estado en beneficios
+**Como** usuario  
+**Quiero** verificar mi estado actual en programas de corresponsabilidad y PAE  
+**Para** conocer mi elegibilidad y status en estos beneficios  
+
+---
+
+### US-011: Interacción social
+**Como** usuario  
+**Quiero** comentar en actividades realizadas  
+**Para** compartir mi experiencia y generar conversación con otros miembros  
+
+---
+
+## HISTORIAS DE ADMINISTRADOR
+
+### US-012: Gestión de eventos
+**Como** admin  
+**Quiero** crear, editar y eliminar eventos  
+**Para** mantener actualizada la información de actividades del capítulo  
+
+---
+
+### US-013: Publicación de contenido
+**Como** admin  
+**Quiero** publicar noticias relacionadas con el capítulo  
+**Para** mantener informada a la comunidad sobre novedades importantes  
+
+---
+
+### US-014: Moderación de contenido
+**Como** admin  
+**Quiero** eliminar comentarios y fotos inapropiadas  
+**Para** mantener un ambiente profesional y apropiado en la plataforma  
+
+---
+
+### US-015: Analytics de eventos
+**Como** admin  
+**Quiero** ver estadísticas de participación en eventos realizados  
+**Para** evaluar el éxito de actividades y mejorar la planificación futura  
+
+---
+
+## NUEVAS HISTORIAS BASADAS EN REQUERIMIENTOS
+
+### US-016: Acceso a biblioteca
+**Como** usuario  
+**Quiero** acceder fácilmente a la biblioteca digital y base de datos de la biblioteca física  
+**Para** aprovechar los recursos académicos disponibles para miembros  
+
+---
+
+### US-017: Información de competencias y proyectos
+**Como** visitante  
+**Quiero** conocer detalles sobre competencias y proyectos (Chem E-Car, K-12, Sembrando Semillas)  
+**Para** entender las oportunidades de participación técnica disponibles  
+
+---
+
+### US-018: Acceso a estatutos
+**Como** usuario  
+**Quiero** consultar los estatutos de la organización  
+**Para** conocer las reglas y estructura formal del capítulo  

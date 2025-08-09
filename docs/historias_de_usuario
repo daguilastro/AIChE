@@ -1,0 +1,46 @@
+Hisotrias de Usuario
+
+Los permisos son incrementales visitante < usuario < administrador
+
+visitante: cualquiera que entre a la página sin registrarse
+usuario: integrante oficial registrado
+admin: integrante oficial encargado de coordinar, moderar y en general del grupo 
+
+
+Como visitante quiero saber la información básica acerca del AICHE
+(quiénes son, donde se encuentran, qué actividades realizan...)
+
+como visitante quiero enterarme de las actividades realizadas y programadas para el futuro.
+
+como visitante quiero ser capaz de compartir noticias o eventos del grupo en mis redes sociales.
+
+como visitante interesado quiero poder contactarme con alguien que pueda dar razón de cualquier duda
+relacionada al AICHE.
+
+como visitante me gustaría ver imágenes o videos de las actividades realizadas.
+
+como visitante me gustaría ver las redes sociales del AICHE.
+
+como visitante me gustaría saber que beneficios otorga el pertencer a este grupo.
+
+
+Como usuario me gustaría poder dejar comentarios en una actividad realizada.
+
+como usuario me gustaría poder registrarme en las actividades de forma eficiente.
+
+como usuario quiero poder acceder a mi información personal. (participación, comentarios, certificados...)
+
+como usuario quiero poder cambiar mi contraseña
+
+
+Como admin quiero poder eliminar comentarios
+
+como admin quiero poder eliminar fotos
+
+como admin quiero poder publicar nuevos eventos
+
+como admin quiero poder editar eventos
+
+como admin quiero poder publicar noticias relacionadas con el capítulo
+
+Como admin quiero ver estadísticas de los eventos realizados.
