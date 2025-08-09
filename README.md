@@ -1,2 +1,0 @@
-# AIChE
-Página AIChE
