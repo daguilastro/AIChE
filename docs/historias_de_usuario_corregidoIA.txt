@@ -1,8 +1,7 @@
-# Historias de Usuario - Página AIChE (Versión 2)
+# Historias de Usuario - Página AIChE (Versión 3)
 
 ## DEFINICIÓN DE ROLES
 - **Visitante**: Cualquiera que entre sin registrarse
-- **Usuario**: Integrante oficial registrado  
 - **Admin**: Coordinador con permisos de gestión
 
 ---
@@ -15,7 +14,7 @@
 **Para** entender qué es la organización y si me interesa participar  
 
 ---
-
+(Quieres publicar tus eventos como el bingo, la carrera o cosas así en la página. Tipo para que quede constancia de las cosas que hacen)
 ### US-002: Visualizar eventos y actividades
 **Como** visitante  
 **Quiero** ver actividades realizadas y eventos programados  
@@ -29,7 +28,7 @@
 **Para** evaluar el valor de unirme al grupo  
 
 ---
-
+(Ajá coordinadores es su correo)
 ### US-004: Acceder a información de contacto
 **Como** visitante interesado  
 **Quiero** contactar fácilmente con coordinadores a través de correo electrónico  
@@ -57,39 +56,16 @@
 **Para** promocionar las actividades del grupo  
 
 ---
-
-## HISTORIAS DE USUARIO REGISTRADO
-
-### US-008: Registro a eventos
-**Como** usuario  
-**Quiero** registrarme eficientemente a actividades  
-**Para** confirmar mi participación y recibir información relevante del evento  
-
----
-
-### US-009: Gestión de perfil personal
-**Como** usuario  
-**Quiero** acceder y modificar mi información personal, incluyendo historial de participación, comentarios y certificados  
-**Para** mantener actualizado mi perfil y hacer seguimiento de mi trayectoria  
-
----
-
+(sip esto es con los excel)
 ### US-010: Verificación de estado en beneficios
-**Como** usuario  
+**Como** visitante  
 **Quiero** verificar mi estado actual en programas de corresponsabilidad y PAE  
 **Para** conocer mi elegibilidad y status en estos beneficios  
 
 ---
 
-### US-011: Interacción social
-**Como** usuario  
-**Quiero** comentar en actividades realizadas  
-**Para** compartir mi experiencia y generar conversación con otros miembros  
-
----
-
 ## HISTORIAS DE ADMINISTRADOR
-
+(esto tiene que ver con el US-002, como lo decidas sigue o se va este)
 ### US-012: Gestión de eventos
 **Como** admin  
 **Quiero** crear, editar y eliminar eventos  
@@ -97,29 +73,8 @@
 
 ---
 
-### US-013: Publicación de contenido
-**Como** admin  
-**Quiero** publicar noticias relacionadas con el capítulo  
-**Para** mantener informada a la comunidad sobre novedades importantes  
-
----
-
-### US-014: Moderación de contenido
-**Como** admin  
-**Quiero** eliminar comentarios y fotos inapropiadas  
-**Para** mantener un ambiente profesional y apropiado en la plataforma  
-
----
-
-### US-015: Analytics de eventos
-**Como** admin  
-**Quiero** ver estadísticas de participación en eventos realizados  
-**Para** evaluar el éxito de actividades y mejorar la planificación futura  
-
----
-
 ## NUEVAS HISTORIAS BASADAS EN REQUERIMIENTOS
-
+(esto lo pusiste en lo que me mandaste pero no sé que es así que explícamelo mejor jajaja)
 ### US-016: Acceso a biblioteca
 **Como** usuario  
 **Quiero** acceder fácilmente a la biblioteca digital y base de datos de la biblioteca física  
