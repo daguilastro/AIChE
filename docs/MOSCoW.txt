@@ -1,0 +1,71 @@
+MUST HAVE
+
+### US-001: Información institucional
+**Como** visitante  
+**Quiero** conocer información básica sobre AIChE (misión, visión, ubicación, actividades)  
+**Para** entender qué es la organización y si me interesa participar
+
+### US-003: Explorar beneficios de membresía
+**Como** visitante  
+**Quiero** conocer los beneficios de pertenecer a AIChE (corresponsabilidad, PAE, becas internacionales, certificados, networking, Canva Pro)  
+**Para** evaluar el valor de unirme al grupo
+
+### US-018: Acceso a estatutos
+**Como** usuario  
+**Quiero** consultar los estatutos de la organización  
+**Para** conocer las reglas y estructura formal del capítulo
+
+### US-017: Información de competencias y proyectos
+**Como** visitante  
+**Quiero** conocer detalles sobre competencias y proyectos (Chem E-Car, K-12, Sembrando Semillas)  
+**Para** entender las oportunidades de participación técnica disponibles  
+
+
+SHOULD HAVE
+
+### US-004: Acceder a información de contacto
+**Como** visitante interesado  
+**Quiero** contactar fácilmente con coordinadores a través de correo electrónico  
+**Para** resolver dudas específicas sobre el grupo
+
+### US-010: Verificación de estado en beneficios
+**Como** visitante  
+**Quiero** verificar mi estado actual en programas de corresponsabilidad y PAE  
+**Para** conocer mi elegibilidad y status en estos beneficios
+
+### US-016: Acceso a biblioteca
+**Como** usuario  
+**Quiero** acceder fácilmente a la biblioteca digital y base de datos de la biblioteca física  
+**Para** aprovechar los recursos académicos disponibles para miembros
+
+### US-006: Acceder a redes sociales
+**Como** visitante  
+**Quiero** acceder rápidamente a Instagram y la comunidad de WhatsApp de AIChE  
+**Para** seguir sus actualizaciones y unirme a la comunicación del grupo
+
+COULD HAVE
+
+### US-005: Ver galería multimedia
+**Como** visitante  
+**Quiero** ver el registro fotográfico de actividades realizadas  
+**Para** conocer mejor el ambiente y tipo de eventos del grupo  
+
+### US-007: Compartir contenido
+**Como** visitante  
+**Quiero** compartir eventos o noticias en mis redes sociales  
+**Para** promocionar las actividades del grupo  
+
+## HISTORIAS DE ADMINISTRADOR
+(esto tiene que ver con el US-002, como lo decidas sigue o se va este)
+### US-012: Gestión de eventos
+**Como** admin  
+**Quiero** crear, editar y eliminar eventos  
+**Para** mantener actualizada la información de actividades del capítulo  
+
+(Quieres publicar tus eventos como el bingo, la carrera o cosas así en la página. Tipo para que quede constancia de las cosas que hacen)
+### US-002: Visualizar eventos y actividades
+**Como** visitante  
+**Quiero** ver actividades realizadas y eventos programados  
+**Para** conocer la dinámica del grupo y planificar mi participación  
+
+
