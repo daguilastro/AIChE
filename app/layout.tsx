@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AIChE - Capítulo Estudiantil",
+  title: "AIChE | UN",
   description: "Capítulo estudiantil de AIChE - American Institute of Chemical Engineers",
 };
 
