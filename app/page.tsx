@@ -2,9 +2,25 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import ComiteSelector from "~/app/components/comite_selector";
+import Footer from "./components/footer";
+
+
+type Comite = {
+  id: number;
+  name: string;
+  image: string;
+  color: string;
+  description: string;
+};
+
 export default function Home() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedComite, setSelectedComite] = useState<Comite | null>(null);
   const parallaxRef = useRef<HTMLDivElement>(null);
+
+  const defaultText =
+    "El Capítulo Estudiantil AIChE UNAL Bogotá organiza sus actividades a través de seis Comités de Trabajo especializados, cada uno con funciones específicas que contribuyen al cumplimiento de los objetivos del capítulo. Cada comité está liderado por un/a coordinador/a que forma parte del Comité de Planeación.";
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -37,6 +53,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-background">
+
       {/* Overlay oscuro del sidebar */}
       <div
         className={`fixed inset-0 bg-black/30 z-40 transition-all duration-300 ease-in-out ${
@@ -53,11 +70,8 @@ export default function Home() {
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Contenedor principal con flex para separar contenido y footer */}
         <div className="h-full flex flex-col">
-          {/* Contenido superior (header + menús) */}
           <div className="p-6">
-            {/* Header del sidebar */}
             <div className="flex items-center justify-between mb-8 bg-[#2CAAEC] dark:bg-[#EF8C44] -m-6 p-6">
               <div className="ml-4">
                 <Link href="/">
@@ -95,7 +109,6 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Menu items */}
             <ul className="space-y-4">
               <li>
                 <a
@@ -132,19 +145,12 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Sección de contacto pegada al fondo */}
           <div className="mt-auto p-6 pt-6">
-            {/* Línea divisoria */}
             <div className="w-full h-px bg-[#2CAAEC] dark:bg-[#EF8C44] mb-4"></div>
-
-            {/* Texto "Contáctanos" */}
             <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
               Contáctanos
             </h4>
-
-            {/* Correo e Instagram */}
             <div className="flex items-center justify-between">
-              {/* Correo */}
               <div className="flex-1">
                 <a
                   href="mailto:aiche_fibog@unal.edu.co"
@@ -153,8 +159,6 @@ export default function Home() {
                   aiche_fibog@unal.edu.co
                 </a>
               </div>
-
-              {/* Ícono de Instagram */}
               <div className="ml-4">
                 <a
                   href="https://www.instagram.com/aiche_un/"
@@ -179,7 +183,6 @@ export default function Home() {
       {/* Header con botón hamburguesa */}
       <header className="fixed top-0 left-0 w-full bg-[#0B2A54] dark:bg-white backdrop-blur-sm border-b border-gray-200 dark:border-gray-200 z-30">
         <div className="flex items-center px-4 py-3">
-          {/* Botón hamburguesa */}
           <button
             onClick={toggleSidebar}
             className="p-2 rounded-lg hover:bg-[#0b1f3b] dark:hover:bg-gray-300 dark:active:bg-gray-300 touch-manipulation transition-colors duration-200"
@@ -199,8 +202,6 @@ export default function Home() {
               />
             </svg>
           </button>
-
-          {/* Logo/Título */}
           <div className="ml-4">
             <Link href="/">
               <img
@@ -221,15 +222,9 @@ export default function Home() {
       </header>
 
       {/* Contenido principal */}
-      <main
-        className={
-          "pt-16 transition-all duration-500 " +
-          (isSidebarOpen ? "blur-sm" : "blur-none")
-        }
-      >
-        {/* Hero Section con parallax contenido */}
+      <main className={"pt-16 transition-all duration-500"}>
+        {/* Hero Section */}
         <section className="relative px-4 md:px-8 lg:px-56 py-8 lg:py-32 overflow-hidden">
-          {/* Imagen de fondo con efecto parallax contenido */}
           <div
             ref={parallaxRef}
             className="absolute inset-0 w-full h-[120%] bg-cover bg-bottom bg-no-repeat -top-[10%]"
@@ -237,19 +232,13 @@ export default function Home() {
               backgroundImage: "url('/assets/Img/hero.jpg')",
             }}
           />
-
-          {/* Gradiente overlay para legibilidad */}
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90 dark:from-background/90 dark:via-background/75 dark:to-background/90" />
-
-          {/* Contenido del hero */}
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-            {/* Título */}
             <div className="lg:flex-1">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#EF8C44] dark:text-white mb-8 leading-tight text-center lg:text-left">
                 Bienvenidos a nuestro capítulo AIChE
               </h1>
             </div>
-            {/* Texto secundario */}
             <div className="lg:flex-1 lg:pl-12">
               <div className="text-left px-2 lg:text-right">
                 <h2 className="text-2xl font-semibold text-black dark:text-white mb-4">
@@ -278,10 +267,10 @@ export default function Home() {
 
         {/* Section Misión */}
         <section className="bg-[#2A6E97]">
-          <div className="lg:flex-1 lg:justify-between lg:mx-56">
-            <h1 className="font-semibold dark:text-white text-3xl lg:py-10">
+          <div className="px-4 md:px-8 lg:px-56 py-8 lg:py-2">
+            <h2 className="font-semibold dark:text-white text-3xl lg:py-10">
               Misión
-            </h1>
+            </h2>
             <p className="lg:pb-10 leading-loose">
               El Capítulo Estudiantil AIChE de la Universidad Nacional de
               Colombia, Sede Bogotá, tiene como misión fortalecer la formación
@@ -294,12 +283,13 @@ export default function Home() {
             </p>
           </div>
         </section>
-        { /* Section Visión */}
+
+        {/* Section Visión */}
         <section className="bg-[#0B2A54]">
-          <div className="lg:flex-1 lg:justify-between lg:mx-56">
-            <h1 className="font-semibold dark:text-white text-3xl lg:py-10">
+          <div className="px-4 md:px-8 lg:px-56 py-8 lg:py-2">
+            <h2 className="font-semibold dark:text-white text-3xl lg:py-10">
               Visión
-            </h1>
+            </h2>
             <p className="lg:pb-10 leading-loose">
               El Capítulo Estudiantil AIChE UNAL Bogotá será reconocido a nivel
               nacional e internacional como un referente de excelencia
@@ -311,7 +301,42 @@ export default function Home() {
             </p>
           </div>
         </section>
+        {/* Section comités */}
+        <section className="flex flex-row">
+          <div className="bg-white basis-[61.8%] lg:pl-56 lg:pr-16 lg:py-10">
+            <div className="transition-all duration-500 ease-in-out transform">
+              <div className="animate-fade-in-up">
+                <h4
+                  className="text-center font-bold text-3xl mt-4 transition-all duration-300"
+                  style={{
+                    color: selectedComite ? selectedComite.color : "#EF8C44",
+                  }}
+                >
+                  {selectedComite
+                    ? `Comité ${selectedComite.name}`
+                    : "Comités de Trabajo"}
+                </h4>
+                <div
+                  className="h-0.5 mt-4 transition-colors duration-300"
+                  style={{
+                    backgroundColor: selectedComite
+                      ? selectedComite.color
+                      : "#EF8C44",
+                  }}
+                ></div>
+              </div>
+              <p
+                key={selectedComite?.id || "default"}
+                className="text-black leading-10 lg:pt-10 animate-fade-in-delayed"
+              >
+                {selectedComite ? selectedComite.description : defaultText}
+              </p>
+            </div>
+          </div>
+          <ComiteSelector onComiteSelect={setSelectedComite} />
+        </section>
       </main>
+      <Footer/>
     </div>
   );
 }
