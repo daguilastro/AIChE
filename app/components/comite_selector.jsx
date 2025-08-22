@@ -24,7 +24,7 @@ export default function ComiteSelector({ onComiteSelect }) {
     },
     {
       id: 3,
-      name: "Planeación",
+      name: "de Planeación",
       image: "/assets/comites/planeacion.png",
       color: "#EF8C44",
       description:
@@ -32,7 +32,7 @@ export default function ComiteSelector({ onComiteSelect }) {
     },
     {
       id: 4,
-      name: "Registro e Integración",
+      name: "de Registro e Integración",
       image: "/assets/comites/registro_integracion.png",
       color: "#629031",
       description:
@@ -40,7 +40,7 @@ export default function ComiteSelector({ onComiteSelect }) {
     },
     {
       id: 5,
-      name: "Relaciones",
+      name: "de Relaciones",
       image: "/assets/comites/relaciones.png",
       color: "#EF8C44",
       description:
@@ -70,7 +70,7 @@ export default function ComiteSelector({ onComiteSelect }) {
         ¡Conoce los Comités!
       </h3>
 
-      <div className="flex flex-col lg:flex-1 lg:pl-8 lg:flex-row lg:items-center">
+      <div className="flex flex-col lg:flex-1 lg:pl-16 lg:flex-row lg:items-center">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-4 place-items-center lg:flex-shrink-0">
           {comites.map((comite) => (
             <div
@@ -99,7 +99,7 @@ export default function ComiteSelector({ onComiteSelect }) {
           ))}
         </div>
 
-        <div className="hidden lg:flex lg:ml-8">
+        <div className="hidden lg:flex">
           <h3 className="text-white text-4xl font-bold text-center">
             ¡Conoce los Comités!
           </h3>
