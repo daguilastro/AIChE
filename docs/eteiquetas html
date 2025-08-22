@@ -1,0 +1,32 @@
+
+Etiquetas de estructura:
+
+    <!DOCTYPE html>: Define el tipo de documento como HTML5.
+    <html>: Etiqueta raíz que engloba todo el contenido HTML.
+    <head>: Contiene metadatos sobre el documento, como el título, enlaces a hojas de estilo, etc.
+    <title>: Define el título de la página web, que se muestra en la pestaña del navegador.
+    <body>: Contiene todo el contenido visible de la página web. 
+
+Etiquetas de texto:
+
+    <h1> a <h6>: Define encabezados de diferentes niveles (del más importante al menos).
+    <p>: Define un párrafo de texto.
+    <a>: Define un enlace a otra página web o a una sección dentro de la misma página.
+    <strong>: Indica texto importante o con énfasis (normalmente se muestra en negrita).
+    <em>: Indica texto enfatizado (normalmente se muestra en cursiva).
+    <span>: Se usa para aplicar estilos a una parte específica del texto.
+    <code>: Se usa para mostrar código de programación.
+    <br>: Inserta un salto de línea.
+    <hr>: Inserta una línea horizontal. 
+
+Etiquetas de listas:
+
+    <ul>: Define una lista desordenada (lista con viñetas).
+    <ol>: Define una lista ordenada (lista numerada).
+    <li>: Define un elemento dentro de una lista.
+    <dl>: Define una lista de definición.
+    <dt>: Define un término dentro de una lista de definición.
+    <dd>: Define la descripción de un término en una lista de definición. 
+
+Etiquetas de multimedia:
+<img>: Inserta una imagen, <audio>: Inserta contenido de audio,
