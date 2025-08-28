@@ -4,6 +4,7 @@ import Image from "next/image";
 
 export default function ComiteSelector({ onComiteSelect }) {
   const [bgColor, setBgColor] = useState("#EF8C44");
+  const [currentComiteIndex, setCurrentComiteIndex] = useState(0);
 
   const comites = [
     {
@@ -56,29 +57,113 @@ export default function ComiteSelector({ onComiteSelect }) {
     },
   ];
 
+  // Función para manejar el clic en un comité
   const handleComiteClick = (comite) => {
     setBgColor(comite.color);
     onComiteSelect(comite);
   };
 
+  // Función para navegar al comité anterior
+  const goToPreviousComite = () => {
+    const newIndex =
+      currentComiteIndex === 0 ? comites.length - 1 : currentComiteIndex - 1;
+    setCurrentComiteIndex(newIndex);
+    handleComiteClick(comites[newIndex]);
+  };
+
+  // Función para navegar al siguiente comité
+  const goToNextComite = () => {
+    const newIndex =
+      currentComiteIndex === comites.length - 1 ? 0 : currentComiteIndex + 1;
+    setCurrentComiteIndex(newIndex);
+    handleComiteClick(comites[newIndex]);
+  };
+
+  // Obtener el comité actual para la vista móvil
+  const currentComite = comites[currentComiteIndex];
+
   return (
     <div
-      className="flex flex-col basis-[38.2%] transition-all duration-500 ease-in-out"
+      className="flex flex-col basis-[38.2%] transition-all duration-500 ease-in-out h-full"
       style={{ backgroundColor: bgColor }}
     >
-      <h3 className="text-center lg:hidden text-white text-xl font-bold mb-6">
+      <h3 className="hidden text-white text-xl font-bold mb-6 pt-6">
         ¡Conoce los Comités!
       </h3>
 
-      <div className="flex flex-col lg:flex-1 lg:pl-16 lg:flex-row lg:items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-4 place-items-center lg:flex-shrink-0">
+      {/* Vista móvil con flechas de navegación */}
+      <div className="lg:hidden flex flex-col items-center justify-center p-4">
+        <div className="flex items-center justify-center w-full mb-4">
+        </div>
+
+        <div className="flex items-center justify-center w-full">
+          <button
+            className="bg-white/10 p-3 rounded-full mr-6"
+            onClick={goToPreviousComite}
+            aria-label="Comité anterior"
+          >
+            <svg
+              className="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <div
+            className="relative h-20 w-20 bg-white/20 rounded-2xl backdrop-blur-sm border border-white/30 shadow-lg flex items-center justify-center overflow-hidden mx-auto"
+            onClick={() => handleComiteClick(currentComite)}
+          >
+            <div className="relative h-12 w-12">
+              <Image
+                src={currentComite.image}
+                alt={currentComite.name}
+                layout="fill"
+                objectFit="contain"
+                className="filter brightness-0 invert"
+              />
+            </div>
+          </div>
+
+          <button
+            className="bg-white/10 p-3 rounded-full ml-6"
+            onClick={goToNextComite}
+            aria-label="Siguiente comité"
+          >
+            <svg
+              className="w-6 h-6 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Vista desktop original */}
+      <div className="hidden lg:flex lg:flex-1 lg:pl-16 lg:flex-row lg:items-center">
+        <div className="grid lg:grid-cols-3 gap-x-8 gap-y-4 place-items-center lg:flex-shrink-0">
           {comites.map((comite) => (
             <div
               key={comite.id}
               className="group cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-3 h-36 flex flex-col justify-between"
               onClick={() => handleComiteClick(comite)}
             >
-            <div className="h-8"></div> {/* Espaciador superior */}
+              <div className="h-8"></div> {/* Espaciador superior */}
               <div className="relative h-20 w-20 bg-white/20 rounded-2xl backdrop-blur-sm border border-white/30 shadow-lg group-hover:bg-white/30 group-hover:shadow-2xl transition-all duration-300 flex items-center justify-center overflow-hidden mx-auto">
                 <div className="relative h-12 w-12">
                   <Image
