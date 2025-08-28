@@ -3,8 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import ComiteSelector from "~/app/components/comite_selector";
 import Footer from "./components/footer";
-import Header from "./components/header";
+import Header from "./components/carrusel";
 import Sidebar from "./components/sidebar";
+import Carrusel from "./components/carrusel";
 
 type Comite = {
   id: number;
@@ -85,9 +86,11 @@ export default function Home() {
           </button>
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div className="lg:flex-1">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#EF8C44] dark:text-white mb-8 leading-tight text-center lg:text-left">
-                Bienvenidos a nuestro capítulo AIChE
-              </h1>
+              <img
+                src="assets/logos/logo_dark_hd.png"
+                alt="AIChE Logo"
+                className="w-auto md:h-48 block "
+              />
             </div>
             <div className="lg:flex-1 lg:pl-12">
               <div className="text-left px-2 lg:text-right">
@@ -115,43 +118,52 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-[#2A6E97]">
-          <div className="px-4 md:px-8 lg:px-56 py-8 lg:py-2">
-            <h2 className="font-semibold text-center dark:text-white text-3xl lg:py-10">
-              Misión
-            </h2>
-            <p className="lg:pb-10 leading-loose text-justify">
-              El Capítulo Estudiantil AIChE de la Universidad Nacional de
-              Colombia, Sede Bogotá, tiene como misión fortalecer la formación
-              integral de los y las estudiantes de Ingeniería Química mediante
-              actividades académicas, culturales, sociales y de proyección
-              profesional. A través del trabajo colaborativo en comités, fomenta
-              el liderazgo, la gestión de proyectos, la divulgación científica y
-              el compromiso con el entorno, contribuyendo al desarrollo de
-              competencias técnicas, humanas y éticas.
-            </p>
+        <section className="bg-[#2A6E97] py-16">
+          <div className="mx-auto px-4 md:px-8 lg:px-56">
+            {/* Contenedor adaptativo: filas en móvil, columnas en desktop */}
+            <div className="flex flex-col md:flex-row bg-[#2A6E97] md:space-x-10 space-y-8 md:space-y-0 p-4 items-center md:items-stretch">
+              {/* Misión */}
+              <div className="md:flex-1 md:px-6">
+                <h2 className="font-bold text-3xl text-[white] mb-6 text-center">
+                  Misión
+                </h2>
+                <p className="leading-relaxed text-[white] text-justify">
+                  El Capítulo Estudiantil AIChE de la Universidad Nacional de
+                  Colombia, Sede Bogotá, tiene como misión fortalecer la
+                  formación integral de los y las estudiantes de Ingeniería
+                  Química mediante actividades académicas, culturales, sociales
+                  y de proyección profesional. A través del trabajo colaborativo
+                  en comités, fomenta el liderazgo, la gestión de proyectos, la
+                  divulgación científica y el compromiso con el entorno,
+                  contribuyendo al desarrollo de competencias técnicas, humanas
+                  y éticas.
+                </p>
+              </div>
+
+              <div className="w-full h-0.5 bg-white my-4 md:w-0.5 md:h-auto md:self-stretch md:my-0" />
+
+              {/* Visión */}
+              <div className="mt-4 md:flex-1 md:px-6">
+                <h2 className="font-bold text-3xl text-[white] mb-6 text-center">
+                  Visión
+                </h2>
+                <p className="leading-relaxed text-[white] text-justify">
+                  El Capítulo Estudiantil AIChE UNAL Bogotá será reconocido a
+                  nivel nacional e internacional como un referente de excelencia
+                  estudiantil en ingeniería química, caracterizado por su
+                  impacto en la comunidad académica, la industria y la sociedad,
+                  su capacidad de innovación en actividades de formación y
+                  divulgación, y por ser un espacio de integración y desarrollo
+                  profesional para sus miembros.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
-
-        <section className="bg-[#0B2A54]">
-          <div className="px-4 md:px-8 lg:px-56 py-8 lg:py-2">
-            <h2 className="font-semibold dark:text-white text-center text-3xl lg:py-10">
-              Visión
-            </h2>
-            <p className="lg:pb-10 leading-loose text-justify">
-              El Capítulo Estudiantil AIChE UNAL Bogotá será reconocido a nivel
-              nacional e internacional como un referente de excelencia
-              estudiantil en ingeniería química, caracterizado por su impacto en
-              la comunidad académica, la industria y la sociedad, su capacidad
-              de innovación en actividades de formación y divulgación, y por ser
-              un espacio de integración y desarrollo profesional para sus
-              miembros.
-            </p>
-          </div>
-        </section>
-
-        <section className="flex flex-row">
-          <div className="bg-white basis-[61.8%] lg:pl-56 lg:pr-16 lg:py-10">
+        <Carrusel />
+        <section className="flex flex-col lg:flex-row">
+          {/* Descripción del comité - ocupa todo el ancho en móvil */}
+          <div className="bg-white w-full lg:basis-[61.8%] lg:pl-56 lg:pr-16 lg:py-10 order-1 lg:order-1">
             <div className="transition-all duration-500 ease-in-out transform">
               <div className="animate-fade-in-up">
                 <h4
@@ -175,13 +187,17 @@ export default function Home() {
               </div>
               <p
                 key={selectedComite?.id || "default"}
-                className="text-black leading-10 lg:pt-10 text-justify animate-fade-in-delayed"
+                className="leading-relaxed text-gray-700 lg:pt-10 p-10 text-justify animate-fade-in-delayed"
               >
                 {selectedComite ? selectedComite.description : defaultText}
               </p>
             </div>
           </div>
-          <ComiteSelector onComiteSelect={setSelectedComite} />
+
+          {/* Selector de comité - ocupa todo el ancho en móvil y va abajo */}
+          <div className="w-full lg:basis-[38.2%] order-2 lg:order-2">
+            <ComiteSelector onComiteSelect={setSelectedComite} />
+          </div>
         </section>
       </main>
       <Footer />

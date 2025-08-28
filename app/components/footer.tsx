@@ -25,9 +25,11 @@ export default function Footer() {
       console.error("Error al copiar:", err);
     }
   };
+
   return (
-    <footer className="flex bg-gray-800 text-white">
-      <div className="flex flex-1 flex-row justify-center py-8 px-56 gap-x-4">
+    <footer className="bg-gray-800 text-white w-full overflow-x-hidden">
+      {/* Contenedor centrado y responsivo: padding reducido en móvil */}
+      <div className="container mx-auto flex flex-row justify-center py-8 px-4 md:px-12 lg:px-56 gap-x-4 max-w-full">
         <Image
           src="/assets/logos/logo_dark_hd.png"
           alt="Descripción de la imagen"

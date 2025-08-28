@@ -7,7 +7,10 @@ interface SidebarProps {
   toggleSidebar: () => void;
 }
 
-export default function Sidebar({ isSidebarOpen, toggleSidebar }: SidebarProps) {
+export default function Sidebar({
+  isSidebarOpen,
+  toggleSidebar,
+}: SidebarProps) {
   return (
     <>
       {/* Overlay oscuro del sidebar */}
@@ -32,14 +35,14 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }: SidebarProps) 
               <div className="ml-4">
                 <Link href="/">
                   <img
-                    src="assets/logos/logo_dark.png"
+                    src="assets/logos/logo_dark_hd.png"
                     alt="AIChE Logo"
                     className="h-8 w-auto block dark:hidden"
                   />
                 </Link>
                 <Link href="/">
                   <img
-                    src="assets/logos/logo_dark.png"
+                    src="assets/logos/logo_dark_hd.png"
                     alt="AIChE Logo"
                     className="h-8 w-auto hidden dark:block"
                   />
@@ -67,12 +70,12 @@ export default function Sidebar({ isSidebarOpen, toggleSidebar }: SidebarProps) 
 
             <ul className="space-y-4">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/biblioteca"
                   className="block py-3 px-4 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-[#0b1f3b] hover:text-black dark:hover:text-white rounded-lg transition-colors duration-200"
                 >
                   Biblioteca
-                </a>
+                </Link>
               </li>
               <li>
                 <a
