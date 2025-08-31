@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Sidebar from "../components/sidebar";
 import Footer from "../components/footer";
+import Image from "next/image";
 
 export default function Biblioteca() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -71,10 +72,10 @@ export default function Biblioteca() {
             </svg>
           </button>
           <div className="relative z-10">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-[#EF8C44] dark:text-white mb-8 text-center">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 text-center">
               Biblioteca
             </h1>
-            <p className="text-white px-6 mb:px-0 text-justify text-xl mb-8 max-w-3xl mx-auto">
+            <p className="text-gray-300 px-6 mb:px-0 text-justify text-xl mb-8 max-w-3xl mx-auto">
               En el Capítulo Estudiantil AIChE creemos en la importancia de
               compartir conocimiento. Por eso ponemos a disposición de nuestros
               miembros y de la comunidad estudiantil una colección de libros
@@ -88,7 +89,7 @@ export default function Biblioteca() {
         <section className="bg-[#2A6E97] py-16">
           <div className="container mx-auto px-10 md:px-8 lg:px-56">
             <div className="flex flex-col lg:flex-row">
-              <div className="lg:w-1/2 pr-0 lg:pr-8">
+              <div className="lg:w-1/3 pr-0 lg:pr-8">
                 <h2 className="text-3xl font-bold text-white mb-6">
                   Manual de préstamo de libros
                 </h2>
@@ -120,7 +121,7 @@ export default function Biblioteca() {
               {/* Línea divisoria vertical (visible solo en desktop) */}
               <div className="hidden lg:block lg:w-0.5 bg-white self-stretch"></div>
 
-              <div className="lg:w-1/2 pt-8 lg:pt-0">
+              <div className="lg:w-1/3 pt-8 lg:pt-0">
                 <div className="pl-0 lg:pl-8">
                   <h3 className="text-2xl font-semibold text-white mb-4">
                     Horario de préstamo y devolución
@@ -221,6 +222,17 @@ export default function Biblioteca() {
                   </ul>
                 </div>
               </div>
+              <div className="md:w-1/3">
+                <div className="relative h-full w-full md:pb-0 pb-60">
+                  hoalaa wtf
+                  <Image
+                    src="/assets/Img/pruebahero.webp"
+                    alt="Descripción"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -234,7 +246,7 @@ export default function Biblioteca() {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Catálogo Físico */}
-              <div className="bg-gray-50 rounded-xl shadow-lg p-8 transition-transform hover:scale-[1.01]">
+              <div className="bg-gray-50 rounded-xl shadow-lg p-8 transition-transform">
                 <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-[#2A6E97]/10">
                   <svg
                     className="w-8 h-8 text-[#2A6E97]"
@@ -283,7 +295,7 @@ export default function Biblioteca() {
               </div>
 
               {/* Catálogo Digital */}
-              <div className="bg-gray-50 rounded-xl shadow-lg p-8 transition-transform hover:scale-[1.01]">
+              <div className="bg-gray-50 rounded-xl shadow-lg p-8 transition-transform">
                 <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-[#EF8C44]/10">
                   <svg
                     className="w-8 h-8 text-[#EF8C44]"
