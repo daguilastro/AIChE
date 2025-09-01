@@ -72,10 +72,10 @@ export default function Biblioteca() {
             </svg>
           </button>
           <div className="relative z-10">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
               Biblioteca
             </h1>
-            <p className="text-gray-300 px-6 mb:px-0 text-justify text-xl mb-8 max-w-3xl mx-auto">
+            <p className="text-lg text-center text-gray-200 max-w-3xl mx-auto">
               En el Capítulo Estudiantil AIChE creemos en la importancia de
               compartir conocimiento. Por eso ponemos a disposición de nuestros
               miembros y de la comunidad estudiantil una colección de libros
@@ -87,10 +87,10 @@ export default function Biblioteca() {
 
         {/* Sección Manual de préstamo */}
         <section className="bg-[#2A6E97] py-16">
-          <div className="container mx-auto px-10 md:px-8 lg:px-56">
+          <div className="container mx-auto px-10 md:px-8 lg:px-10">
             <div className="flex flex-col lg:flex-row">
               <div className="lg:w-1/3 pr-0 lg:pr-8">
-                <h2 className="text-3xl font-bold text-white mb-6">
+                <h2 className="text-2xl font-bold text-white mb-6">
                   Manual de préstamo de libros
                 </h2>
                 <p className="text-white leading-relaxed mb-8">
@@ -225,7 +225,6 @@ export default function Biblioteca() {
               <div className="hidden lg:block lg:w-0.5 lg:mr-8 bg-white self-stretch"></div>
               <div className="md:w-1/3">
                 <div className="relative h-full w-full md:pb-0 pb-60">
-                  hoalaa wtf
                   <Image
                     src="/assets/Img/pruebahero.webp"
                     alt="Descripción"

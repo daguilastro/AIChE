@@ -68,7 +68,7 @@ export default function Benefits() {
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-[#EF8C44] mb-8">
-              <h3 className="font-bold text-lg mb-4">Requisitos principales</h3>
+              <h3 className="font-bold text-lg text-[#EF8C44] mb-4">Requisitos principales</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <div className="flex-shrink-0 w-5 h-5 mr-2 mt-1">
@@ -131,7 +131,7 @@ export default function Benefits() {
             </div>
 
             <div className="bg-white rounded-lg p-6 border-l-4 border-[#629031] mb-8 shadow-sm">
-              <h3 className="font-bold text-lg mb-4">Requisitos principales</h3>
+              <h3 className="font-bold text-lg text-[#629031] mb-4">Requisitos principales</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <div className="flex-shrink-0 w-5 h-5 mr-2 mt-1">

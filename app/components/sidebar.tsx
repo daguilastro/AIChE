@@ -37,16 +37,10 @@ export default function Sidebar({
                   <img
                     src="assets/logos/logo_dark_hd.png"
                     alt="AIChE Logo"
-                    className="h-8 w-auto block dark:hidden"
+                    className="h-14 w-auto block"
                   />
                 </Link>
-                <Link href="/">
-                  <img
-                    src="assets/logos/logo_dark_hd.png"
-                    alt="AIChE Logo"
-                    className="h-8 w-auto hidden dark:block"
-                  />
-                </Link>
+
               </div>
               <button
                 onClick={toggleSidebar}
