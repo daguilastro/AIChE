@@ -87,7 +87,7 @@ export default function Sidebar({
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/beneficios"
                   className="block py-3 px-4 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-[#0b1f3b] hover:text-black dark:hover:text-white rounded-lg transition-colors duration-200"
                 >
                   Beneficios

@@ -222,6 +222,7 @@ export default function Biblioteca() {
                   </ul>
                 </div>
               </div>
+              <div className="hidden lg:block lg:w-0.5 lg:mr-8 bg-white self-stretch"></div>
               <div className="md:w-1/3">
                 <div className="relative h-full w-full md:pb-0 pb-60">
                   hoalaa wtf
