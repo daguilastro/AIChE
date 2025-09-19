@@ -37,16 +37,10 @@ export default function Sidebar({
                   <img
                     src="assets/logos/logo_dark_hd.png"
                     alt="AIChE Logo"
-                    className="h-8 w-auto block dark:hidden"
+                    className="h-14 w-auto block"
                   />
                 </Link>
-                <Link href="/">
-                  <img
-                    src="assets/logos/logo_dark_hd.png"
-                    alt="AIChE Logo"
-                    className="h-8 w-auto hidden dark:block"
-                  />
-                </Link>
+
               </div>
               <button
                 onClick={toggleSidebar}
@@ -87,7 +81,7 @@ export default function Sidebar({
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/beneficios"
                   className="block py-3 px-4 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-[#0b1f3b] hover:text-black dark:hover:text-white rounded-lg transition-colors duration-200"
                 >
                   Beneficios

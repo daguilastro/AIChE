@@ -64,7 +64,7 @@ export default function Carrusel() {
         ¿Qué hacemos?
       </h2>
       
-      <div className="relative max-w-6xl mx-auto px-4">
+      <div className="relative max-w-6xl mx-auto px-8">
         {/* Flechas de navegación en escritorio */}
         <button 
           onClick={prevSlide}
