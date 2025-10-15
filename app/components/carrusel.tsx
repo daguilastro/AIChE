@@ -15,25 +15,25 @@ const items: CarruselItem[] = [
     id: 1,
     title: "Visitas técnicas",
     description: "Organizamos recorridos a plantas industriales, centros de investigación y empresas del sector químico y de procesos. Estos espacios permiten conocer de primera mano cómo se aplican los conocimientos adquiridos en clase, comprender los retos de la industria y establecer contactos con profesionales del área.",
-    imageUrl: "/assets/Img/pruebahero.webp"
+    imageUrl: "/assets/Img/visitasTecnicas.jpeg"
   },
   {
     id: 2,
     title: "Foros académicos",
     description: "Creamos escenarios de discusión y aprendizaje en torno a temas actuales y relevantes de la ingeniería química, la investigación y la sostenibilidad. Invitamos a expertos nacionales e internacionales, profesores y egresados que comparten su experiencia, generando un diálogo enriquecedor entre la academia y la industria.",
-    imageUrl: "/assets/Img/pruebahero.webp"
+    imageUrl: "/assets/Img/foros.jpg"
   },
   {
     id: 3,
     title: "Actividades académicas",
     description: "Ofrecemos talleres, cursos, charlas y seminarios que refuerzan la formación de nuestros miembros. Estas actividades buscan complementar la educación universitaria con habilidades prácticas, conocimientos especializados y perspectivas globales que preparan a los estudiantes para los retos profesionales.",
-    imageUrl: "/assets/Img/pruebahero.webp"
+    imageUrl: "/assets/Img/actividadesacademicas.jpeg"
   },
   {
     id: 4,
     title: "Actividades lúdicas",
     description: "Creemos en el valor de la integración y el bienestar, por eso realizamos actividades culturales, deportivas y recreativas que promueven el trabajo en equipo, la creatividad y la unión de nuestra comunidad. Estas experiencias nos permiten crecer no solo como ingenieros, sino también como personas.",
-    imageUrl: "/assets/Img/pruebahero.webp"
+    imageUrl: "/assets/Img/actividadesculturales.jpeg"
   }
 ];
 

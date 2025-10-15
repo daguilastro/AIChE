@@ -37,7 +37,7 @@ export default function Biblioteca() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-background">
+    <div className="min-h-screen bg-background">
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       {/* Contenido principal */}
@@ -51,26 +51,30 @@ export default function Biblioteca() {
               backgroundImage: "url('/assets/Img/pruebahero.webp')",
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90 dark:from-background/90 dark:via-background/75 dark:to-background/90" />
-          <button
-            onClick={toggleSidebar}
-            className="absolute top-8 left-8 p-3 rounded-lg bg-black/20 hover:bg-black/40 backdrop-blur-sm transition-all duration-200 z-20"
-            aria-label="Abrir menú de navegación"
-          >
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90" />
+          {!isSidebarOpen && (
+            <button
+              onClick={toggleSidebar}
+              className="fixed top-4 left-4 p-3 rounded-lg bg-black/30 hover:bg-black/50 backdrop-blur-md shadow-md transition-all duration-200 z-[60]"
+              aria-label="Abrir menú de navegación"
+              aria-expanded="false"
+              aria-controls="sidebar-nav"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          )}
           <div className="relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
               Biblioteca
@@ -179,7 +183,7 @@ export default function Biblioteca() {
                           d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                       </svg>
-                      <span>Vigente durante el semestre académico 2025-1</span>
+                      <span>Vigente durante el semestre académico 2025-2</span>
                     </div>
                   </div>
 

@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import ComiteSelector from "~/app/components/comite_selector";
 import Footer from "./components/footer";
-import Header from "./components/carrusel";
 import Sidebar from "./components/sidebar";
 import Carrusel from "./components/carrusel";
 
@@ -51,7 +50,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-background">
+    <div className="min-h-screen bg-background">
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       {/* Contenido principal */}
@@ -64,26 +63,30 @@ export default function Home() {
               backgroundImage: "url('/assets/Img/hero.jpg')",
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90 dark:from-background/90 dark:via-background/75 dark:to-background/90" />
-          <button
-            onClick={toggleSidebar}
-            className="absolute top-8 left-8 p-3 rounded-lg bg-black/20 hover:bg-black/40 backdrop-blur-sm transition-all duration-200 z-20"
-            aria-label="Abrir menú de navegación"
-          >
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90" />
+          {!isSidebarOpen && (
+            <button
+              onClick={toggleSidebar}
+              className="fixed top-4 left-4 p-3 rounded-lg bg-black/30 hover:bg-black/50 backdrop-blur-md shadow-md transition-all duration-200 z-[60]"
+              aria-label="Abrir menú de navegación"
+              aria-expanded="false"
+              aria-controls="sidebar-nav"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          )}
           <div className="relative z-10 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div className="lg:flex-1">
               <img
@@ -94,10 +97,10 @@ export default function Home() {
             </div>
             <div className="lg:flex-1 lg:pl-12">
               <div className="text-left px-2 lg:text-right">
-                <h2 className="text-2xl font-semibold text-black dark:text-white mb-4">
+                <h2 className="text-2xl font-semibold text-white mb-4">
                   ¡Conócenos!
                 </h2>
-                <p className="text-gray-600 text-justify leading-loose dark:text-gray-300">
+                <p className="text-justify leading-loose text-gray-300">
                   Somos el capítulo AIChE (American Institute of Chemical
                   Engineers) de la Universidad Nacional de Colombia. Somos una
                   comunidad de estudiantes apasionados por la ingeniería

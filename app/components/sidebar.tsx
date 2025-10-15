@@ -25,13 +25,13 @@ export default function Sidebar({
 
       {/* Sidebar */}
       <nav
-        className={`fixed top-0 left-0 h-full w-80 bg-white dark:bg-background shadow-xl z-50 transform transition-transform duration-300 overflow-y-auto ${
+        className={`fixed top-0 left-0 h-full w-80 bg-background shadow-xl z-50 transform transition-transform duration-300 overflow-y-auto ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="h-full flex flex-col">
           <div className="p-6">
-            <div className="flex items-center justify-between mb-8 bg-[#2CAAEC] dark:bg-[#EF8C44] -m-6 p-6">
+            <div className="flex items-center justify-between mb-8 bg-[#EF8C44] -m-6 p-6">
               <div className="ml-4">
                 <Link href="/">
                   <img
@@ -44,10 +44,10 @@ export default function Sidebar({
               </div>
               <button
                 onClick={toggleSidebar}
-                className="p-2 rounded-lg active:bg-gray-300 dark:active:bg-[#EF8C44] transition-colors duration-200"
+                className="p-2 rounded-lg active:bg-[#EF8C44] transition-colors duration-200"
               >
                 <svg
-                  className="w-6 h-6 text-black dark:text-white"
+                  className="w-6 h-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -66,7 +66,7 @@ export default function Sidebar({
               <li>
                 <Link
                   href="/biblioteca"
-                  className="block py-3 px-4 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-[#0b1f3b] hover:text-black dark:hover:text-white rounded-lg transition-colors duration-200"
+                  className="block py-3 px-4 text-white hover:bg-[#0b1f3b] hover:text-white rounded-lg transition-colors duration-200"
                 >
                   Biblioteca
                 </Link>
@@ -74,7 +74,7 @@ export default function Sidebar({
               <li>
                 <a
                   href="#"
-                  className="block py-3 px-4 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-[#0b1f3b] hover:text-black dark:hover:text-white rounded-lg transition-colors duration-200"
+                  className="block py-3 px-4 text-white hover:bg-[#0b1f3b] hover:text-white rounded-lg transition-colors duration-200"
                 >
                   Competencias & Proyectos
                 </a>
@@ -82,15 +82,15 @@ export default function Sidebar({
               <li>
                 <a
                   href="/beneficios"
-                  className="block py-3 px-4 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-[#0b1f3b] hover:text-black dark:hover:text-white rounded-lg transition-colors duration-200"
+                  className="block py-3 px-4 text-white hover:bg-[#0b1f3b] hover:text-white rounded-lg transition-colors duration-200"
                 >
                   Beneficios
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="block py-3 px-4 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-[#0b1f3b] hover:text-black dark:hover:text-white rounded-lg transition-colors duration-200"
+                  href="/gallery"
+                  className="block py-3 px-4 text-white hover:bg-[#0b1f3b] hover:text-white rounded-lg transition-colors duration-200"
                 >
                   Galería
                 </a>
@@ -99,15 +99,15 @@ export default function Sidebar({
           </div>
 
           <div className="mt-auto p-6 pt-6">
-            <div className="w-full h-px bg-[#2CAAEC] dark:bg-[#EF8C44] mb-4"></div>
-            <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">
+            <div className="w-full h-px bg-[#EF8C44] mb-4"></div>
+            <h4 className="text-sm font-semibold text-gray-300 mb-3">
               Contáctanos
             </h4>
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <a
                   href="mailto:aiche_fibog@unal.edu.co"
-                  className="text-sm text-gray-600 dark:text-gray-400 hover:text-[#2CAAEC] dark:hover:text-[#EF8C44] transition-colors duration-200"
+                  className="text-sm text-gray-400 hover:text-[#EF8C44] transition-colors duration-200"
                 >
                   aiche_fibog@unal.edu.co
                 </a>
@@ -120,7 +120,7 @@ export default function Sidebar({
                   className="p-2 rounded-lg transition-colors duration-200 group"
                 >
                   <svg
-                    className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-[#E4405F] transition-colors duration-200"
+                    className="w-5 h-5 text-gray-400 group-hover:text-[#E4405F] transition-colors duration-200"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
