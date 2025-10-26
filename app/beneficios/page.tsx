@@ -22,8 +22,8 @@ export default function Benefits() {
         <section className="relative px-8 md:px-8 lg:px-56 py-8 lg:py-30 bg-[#15325b] text-white overflow-hidden">
           <div
             className="
-    absolute inset-0 w-full h-[120%]
-    bg-cover bg-no-repeat -top-[10%]
+    absolute inset-0 w-full h-[170%]
+    bg-cover bg-no-repeat -top-[60%]
     bg-[center_-10px]
     md:bg-[center_-250px]
   "

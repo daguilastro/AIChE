@@ -63,8 +63,10 @@ const projects: Project[] = [
     icon: "🧪",
     description: "Competencia académica de termodinámica e ingeniería química",
     longDescription: `Las Olimpiadas de Termodinámica son una competencia académica que pone a prueba los conocimientos y habilidades de los estudiantes en temas fundamentales de la ingeniería química. A través de retos teóricos y prácticos, los equipos fortalecen su razonamiento, aplican conceptos de manera creativa y fomentan el trabajo en equipo.\n\nEste proyecto tiene su propia identidad dentro del Capítulo y un espacio activo en redes sociales, donde se comparten convocatorias, resultados y momentos destacados.`,
-    images: [],
-    logo: "/assets/Img/olimpiaster/logoolimter.png",
+    images: [
+      "/assets/Img/olimpiadaster/1.jpeg",
+    ],
+    logo: "/assets/Img/olimpiadaster/logoolimter.png",
     instagram: "@out_unal",
   },
   {
@@ -316,7 +318,7 @@ export default function ProjectsPage() {
               backgroundImage: "url('/assets/Img/heroproyecto.jpg')",
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90" />
 
           {/* Botón del menú */}
           {!isSidebarOpen && (

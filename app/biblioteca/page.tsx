@@ -46,9 +46,9 @@ export default function Biblioteca() {
         <section className="relative px-4 md:px-8 lg:px-56 py-8 lg:py-16 overflow-hidden">
           <div
             ref={parallaxRef}
-            className="absolute inset-0 w-full h-[120%] bg-cover bg-bottom bg-no-repeat -top-[10%]"
+            className="absolute inset-0 w-full h-[230%] bg-cover bg-bottom bg-no-repeat -top-[0%]"
             style={{
-              backgroundImage: "url('/assets/Img/pruebahero.webp')",
+              backgroundImage: "url('/assets/Img/herobiblio.jpg')",
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90" />
@@ -230,7 +230,7 @@ export default function Biblioteca() {
               <div className="md:w-1/3">
                 <div className="relative h-full w-full md:pb-0 pb-60">
                   <Image
-                    src="/assets/Img/pruebahero.webp"
+                    src="/assets/Img/manual.png"
                     alt="Descripción"
                     fill
                     className="object-cover"
