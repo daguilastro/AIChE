@@ -31,7 +31,7 @@ const items: CarruselItem[] = [
   },
   {
     id: 4,
-    title: "Actividades lúdicas",
+    title: "Actividades culturales",
     description: "Creemos en el valor de la integración y el bienestar, por eso realizamos actividades culturales, deportivas y recreativas que promueven el trabajo en equipo, la creatividad y la unión de nuestra comunidad. Estas experiencias nos permiten crecer no solo como ingenieros, sino también como personas.",
     imageUrl: "/assets/Img/actividadesculturales.jpeg"
   }

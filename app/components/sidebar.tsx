@@ -73,7 +73,7 @@ export default function Sidebar({
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/projects"
                   className="block py-3 px-4 text-white hover:bg-[#0b1f3b] hover:text-white rounded-lg transition-colors duration-200"
                 >
                   Competencias & Proyectos
