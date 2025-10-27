@@ -132,18 +132,19 @@ const useInView = (ref: React.RefObject<HTMLDivElement>) => {
 };
 
 // Componente para cada proyecto
-const ProjectSection = ({ project }: { project: Project }) => {
+const ProjectSection = ({ project, index }: { project: Project; index: number }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef);
+  const isEven = index % 2 === 0;
 
   return (
     <section
       ref={sectionRef}
       className={`py-16 px-4 md:px-8 transition-all duration-1000 ${
         isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
+      } ${isEven ? "bg-white" : "bg-[#F8F9FA]"}`}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Header con Logo */}
         <div className="text-center mb-12">
           <div className="inline-block mb-4">
@@ -186,7 +187,7 @@ const ProjectSection = ({ project }: { project: Project }) => {
 
         {/* Descripción */}
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-8">
-          <p className="text-gray-700 leading-relaxed text-lg text-justify whitespace-pre-line">
+          <p className="text-gray-700 leading-relaxed text-lg whitespace-pre-line">
             {project.longDescription}
           </p>
 
@@ -286,14 +287,6 @@ const ProjectSection = ({ project }: { project: Project }) => {
           </div>
         )}
       </div>
-
-      {/* Separador */}
-      <div className="mt-20 max-w-4xl mx-auto">
-        <div
-          className="h-1 rounded-full opacity-30"
-          style={{ backgroundColor: project.color }}
-        />
-      </div>
     </section>
   );
 };
@@ -306,25 +299,25 @@ export default function ProjectsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50">
+    <div className="min-h-screen bg-white">
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-      <main>
+      <main className="transition-all duration-500">
         {/* Hero Section */}
-        <section className="relative h-96 md:h-[28rem] flex items-center justify-center overflow-hidden">
+        <section className="relative px-8 md:px-8 lg:px-56 py-8 lg:py-30 bg-[#15325b] text-white overflow-hidden">
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 w-full h-[170%] bg-cover bg-no-repeat -top-[60%] bg-[center_-10px] md:bg-[center_-250px]"
             style={{
               backgroundImage: "url('/assets/Img/heroproyecto.jpg')",
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#15325b]/95 via-[#15325b]/85 to-[#15325b]/95" />
 
           {/* Botón del menú */}
           {!isSidebarOpen && (
             <button
               onClick={toggleSidebar}
-              className="fixed top-4 left-4 p-3 rounded-lg bg-black/30 hover:bg-black/50 backdrop-blur-md shadow-md transition-all duration-200 z-[60] hover:scale-110"
+              className="fixed top-4 left-4 p-3 rounded-lg bg-black/30 hover:bg-black/50 backdrop-blur-md shadow-md transition-all duration-200 z-[60]"
               aria-label="Abrir menú de navegación"
             >
               <svg
@@ -344,11 +337,11 @@ export default function ProjectsPage() {
           )}
 
           {/* Contenido del hero */}
-          <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-2xl">
+          <div className="relative z-10 max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
               Nuestros Proyectos
             </h1>
-            <p className="text-xl md:text-2xl text-gray-100 leading-relaxed drop-shadow-lg">
+            <p className="text-lg text-center text-gray-200 max-w-3xl mx-auto">
               Iniciativas académicas, competencias internacionales y proyectos de impacto social
             </p>
           </div>
@@ -356,8 +349,8 @@ export default function ProjectsPage() {
 
         {/* Proyectos */}
         <div className="relative">
-          {projects.map((project) => (
-            <ProjectSection key={project.id} project={project} />
+          {projects.map((project, index) => (
+            <ProjectSection key={project.id} project={project} index={index} />
           ))}
         </div>
       </main>

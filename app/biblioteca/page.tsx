@@ -41,17 +41,18 @@ export default function Biblioteca() {
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       {/* Contenido principal */}
-      <main className={"transition-all duration-500"}>
+      <main className="transition-all duration-500">
         {/* Hero Section */}
-        <section className="relative px-4 md:px-8 lg:px-56 py-8 lg:py-16 overflow-hidden">
+        <section className="relative px-8 md:px-8 lg:px-56 py-8 lg:py-30 bg-[#15325b] text-white overflow-hidden">
           <div
             ref={parallaxRef}
-            className="absolute inset-0 w-full h-[230%] bg-cover bg-bottom bg-no-repeat -top-[0%]"
+            className="absolute inset-0 w-full h-[170%] bg-cover bg-no-repeat -top-[60%] bg-[center_-10px] md:bg-[center_-250px]"
             style={{
               backgroundImage: "url('/assets/Img/herobiblio.jpg')",
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#15325b]/95 via-[#15325b]/85 to-[#15325b]/95" />
+          
           {!isSidebarOpen && (
             <button
               onClick={toggleSidebar}
@@ -75,7 +76,8 @@ export default function Biblioteca() {
               </svg>
             </button>
           )}
-          <div className="relative z-10">
+          
+          <div className="relative z-10 max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
               Biblioteca
             </h1>
@@ -94,10 +96,10 @@ export default function Biblioteca() {
           <div className="container mx-auto px-10 md:px-8 lg:px-10">
             <div className="flex flex-col lg:flex-row">
               <div className="lg:w-1/3 pr-0 lg:pr-8">
-                <h2 className="text-2xl font-bold text-white mb-6">
+                <h2 className="text-3xl font-bold text-white mb-6">
                   Manual de préstamo de libros
                 </h2>
-                <p className="text-white leading-relaxed mb-8">
+                <p className="text-white text-lg leading-relaxed mb-8">
                   Con el fin de garantizar el acceso y el cuidado de nuestra
                   colección, hemos establecido un sistema de préstamo sencillo:
                 </p>
@@ -105,35 +107,40 @@ export default function Biblioteca() {
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   Requisitos
                 </h3>
-                <ul className="text-white mb-6 space-y-2 list-disc pl-6">
-                  <li>
-                    Presentar y dejar un documento físico (cédula, licencia de
-                    conducción o carné estudiantil) durante el tiempo de
-                    préstamo.
+                <ul className="text-white text-lg mb-6 space-y-3">
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 w-5 h-5 mr-3 mt-1">
+                      <div className="w-full h-full bg-[#EF8C44] rounded-full"></div>
+                    </div>
+                    <span>
+                      Presentar (cédula, licencia de
+                      conducción o carné estudiantil)
+                    </span>
                   </li>
-                  <li>
-                    El préstamo se realiza únicamente de forma presencial, en el
-                    horario establecido.
-                  </li>
-                  <li>
-                    El documento será devuelto en el momento de la entrega o
-                    renovación del libro.
+                  <li className="flex items-start">
+                    <div className="flex-shrink-0 w-5 h-5 mr-3 mt-1">
+                      <div className="w-full h-full bg-[#EF8C44] rounded-full"></div>
+                    </div>
+                    <span>
+                      El préstamo se realiza únicamente de forma presencial, en el
+                      horario establecido.
+                    </span>
                   </li>
                 </ul>
               </div>
 
               {/* Línea divisoria vertical (visible solo en desktop) */}
-              <div className="hidden lg:block lg:w-0.5 bg-white self-stretch"></div>
+              <div className="hidden lg:block lg:w-0.5 bg-white/30 self-stretch mx-8"></div>
 
               <div className="lg:w-1/3 pt-8 lg:pt-0">
-                <div className="pl-0 lg:pl-8">
-                  <h3 className="text-2xl font-semibold text-white mb-4">
+                <div className="pl-0 lg:pl-0">
+                  <h3 className="text-2xl font-semibold text-white mb-6">
                     Horario de préstamo y devolución
                   </h3>
-                  <div className="flex flex-col text-white space-y-2 mb-6">
+                  <div className="flex flex-col text-white text-lg space-y-4 mb-8">
                     <div className="flex items-center">
                       <svg
-                        className="w-6 h-6 mr-2 text-[#EF8C44]"
+                        className="w-6 h-6 mr-3 text-[#EF8C44] flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -149,7 +156,7 @@ export default function Biblioteca() {
                     </div>
                     <div className="flex items-center">
                       <svg
-                        className="w-6 h-6 mr-2 text-[#EF8C44]"
+                        className="w-6 h-6 mr-3 text-[#EF8C44] flex-shrink-0"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -163,9 +170,9 @@ export default function Biblioteca() {
                       </svg>
                       <span>9:15 am – 10:15 am</span>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-start">
                       <svg
-                        className="w-6 h-6 mr-2 text-[#EF8C44]"
+                        className="w-6 h-6 mr-3 text-[#EF8C44] flex-shrink-0 mt-0.5"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -187,12 +194,12 @@ export default function Biblioteca() {
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-semibold text-white mb-4">
+                  <h3 className="text-2xl font-semibold text-white mb-6">
                     Ubicación
                   </h3>
-                  <p className="text-white mb-6 flex items-center">
+                  <p className="text-white text-lg mb-8 flex items-start">
                     <svg
-                      className="w-6 h-6 mr-2 text-[#EF8C44]"
+                      className="w-6 h-6 mr-3 text-[#EF8C44] flex-shrink-0 mt-0.5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -204,36 +211,48 @@ export default function Biblioteca() {
                         d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                       />
                     </svg>
-                    Oficina 301 - Edificio 453 (Aulas de Ingeniería)
+                    <span>Oficina 301 - Edificio 453 (Aulas de Ingeniería)</span>
                   </p>
 
                   <h3 className="text-2xl font-semibold text-white mb-4">
                     Condiciones
                   </h3>
-                  <ul className="text-white mb-6 space-y-2 list-disc pl-6">
-                    <li>Préstamo inicial: 15 días calendario.</li>
-                    <li>
-                      Renovación: una sola vez por 7 días adicionales
-                      (solicitándola al correo
-                      <a
-                        href="mailto:aiche_fibog@unal.edu.co"
-                        className="text-[#EF8C44] hover:underline ml-1"
-                      >
-                        aiche_fibog@unal.edu.co
-                      </a>
-                      )
+                  <ul className="text-white text-lg mb-6 space-y-3">
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 w-5 h-5 mr-3 mt-1">
+                        <div className="w-full h-full bg-[#EF8C44] rounded-full"></div>
+                      </div>
+                      <span>Préstamo inicial: 15 días calendario.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="flex-shrink-0 w-5 h-5 mr-3 mt-1">
+                        <div className="w-full h-full bg-[#EF8C44] rounded-full"></div>
+                      </div>
+                      <span>
+                        Renovación: una sola vez por 7 días adicionales
+                        (solicitándola al correo
+                        <a
+                          href="mailto:aiche_fibog@unal.edu.co"
+                          className="text-[#EF8C44] hover:underline ml-1 font-medium"
+                        >
+                          aiche_fibog@unal.edu.co
+                        </a>
+                        )
+                      </span>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className="hidden lg:block lg:w-0.5 lg:mr-8 bg-white self-stretch"></div>
-              <div className="md:w-1/3">
-                <div className="relative h-full w-full md:pb-0 pb-60">
+              
+              <div className="hidden lg:block lg:w-0.5 bg-white/30 self-stretch mx-8"></div>
+              
+              <div className="lg:w-1/3 pt-8 lg:pt-0">
+                <div className="relative h-full w-full min-h-[400px] md:min-h-[500px]">
                   <Image
                     src="/assets/Img/manual.png"
-                    alt="Descripción"
+                    alt="Manual de préstamo"
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-lg shadow-xl"
                   />
                 </div>
               </div>
@@ -248,9 +267,9 @@ export default function Biblioteca() {
               Catálogos de Libros
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Catálogo Físico */}
-              <div className="bg-gray-50 rounded-xl shadow-lg p-8 transition-transform">
+              <div className="bg-gray-50 rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border border-gray-100">
                 <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-[#2A6E97]/10">
                   <svg
                     className="w-8 h-8 text-[#2A6E97]"
@@ -269,7 +288,7 @@ export default function Biblioteca() {
                 <h3 className="text-2xl font-bold text-[#2A6E97] mb-4 text-center">
                   Catálogo de Libros Físicos
                 </h3>
-                <p className="text-gray-600 text-center mb-6">
+                <p className="text-gray-700 text-lg text-center mb-6">
                   Consulta nuestra colección de libros disponibles para préstamo
                   físico.
                 </p>
@@ -278,7 +297,7 @@ export default function Biblioteca() {
                     href="https://docs.google.com/spreadsheets/d/1_V5nwLBr3jQJJXl4oxb6cgOVEQNNTOLD1rJUzj0Ws20/edit?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 bg-[#2A6E97] hover:bg-[#1d5a7f] text-white font-medium rounded-lg transition-all duration-200 shadow-md"
+                    className="inline-flex items-center px-6 py-3 bg-[#2A6E97] hover:bg-[#1d5a7f] text-white font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
                   >
                     <svg
                       className="w-5 h-5 mr-2"
@@ -299,7 +318,7 @@ export default function Biblioteca() {
               </div>
 
               {/* Catálogo Digital */}
-              <div className="bg-gray-50 rounded-xl shadow-lg p-8 transition-transform">
+              <div className="bg-gray-50 rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl border border-gray-100">
                 <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-[#EF8C44]/10">
                   <svg
                     className="w-8 h-8 text-[#EF8C44]"
@@ -318,7 +337,7 @@ export default function Biblioteca() {
                 <h3 className="text-2xl font-bold text-[#EF8C44] mb-4 text-center">
                   Catálogo de Libros Virtuales
                 </h3>
-                <p className="text-gray-600 text-center mb-6">
+                <p className="text-gray-700 text-lg text-center mb-6">
                   ¿No encontraste el libro que buscabas? Consulta nuestra
                   biblioteca digital en constante crecimiento.
                 </p>
@@ -327,7 +346,7 @@ export default function Biblioteca() {
                     href="https://docs.google.com/spreadsheets/d/18rNhpH9yvZfvZFioeXuP4l-b-OGfd7CG1RLwZ_9Y-K0/edit?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 bg-[#EF8C44] hover:bg-[#ff9a4d] text-white font-medium rounded-lg transition-all duration-200 shadow-md"
+                    className="inline-flex items-center px-6 py-3 bg-[#EF8C44] hover:bg-[#e07d35] text-white font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
                   >
                     <svg
                       className="w-5 h-5 mr-2"
@@ -349,11 +368,11 @@ export default function Biblioteca() {
             </div>
 
             {/* Drive compartido */}
-            <div className="mt-12 text-center">
-              <h3 className="text-2xl font-semibold text-[#2A6E97] mb-4">
+            <div className="mt-16 text-center max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-[#2A6E97] mb-4">
                 Accede a la Biblioteca Digital
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-700 text-lg mb-8">
                 Explora nuestro repositorio compartido con recursos digitales de
                 interés.
               </p>
@@ -361,9 +380,9 @@ export default function Biblioteca() {
                 href="https://drive.google.com/drive/folders/0APF8VBZOHghoUk9PVA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#2A6E97] to-[#EF8C44] hover:from-[#1d5a7f] hover:to-[#ff9a4d] text-white font-bold rounded-lg transition-all duration-200 shadow-lg"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#2A6E97] to-[#EF8C44] hover:from-[#1d5a7f] hover:to-[#e07d35] text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                <svg className="w-6 h-6 mr-2" viewBox="0 0 87.3 78" fill="none">
+                <svg className="w-6 h-6 mr-3" viewBox="0 0 87.3 78" fill="none">
                   <path
                     d="M6.6 66.85l3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5l5.4 9.35z"
                     fill="#0066da"

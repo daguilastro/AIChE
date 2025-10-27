@@ -21,12 +21,7 @@ export default function Benefits() {
         {/* Header */}
         <section className="relative px-8 md:px-8 lg:px-56 py-8 lg:py-30 bg-[#15325b] text-white overflow-hidden">
           <div
-            className="
-    absolute inset-0 w-full h-[170%]
-    bg-cover bg-no-repeat -top-[60%]
-    bg-[center_-10px]
-    md:bg-[center_-250px]
-  "
+            className="absolute inset-0 w-full h-[170%] bg-cover bg-no-repeat -top-[60%] bg-[center_-10px] md:bg-[center_-250px]"
             style={{ backgroundImage: "url('/assets/Img/beneficios.jpg')" }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#15325b]/95 via-[#15325b]/85 to-[#15325b]/95" />
@@ -92,7 +87,7 @@ export default function Benefits() {
                 <h2 className="text-3xl font-bold text-[#2A6E97] mb-4">
                   Corresponsabilidad
                 </h2>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 text-lg mb-4">
                   Es una modalidad de participación que permite a estudiantes
                   con apoyos económicos institucionales (alimentación,
                   transporte, alojamiento) cumplir con las 16 horas exigidas por
@@ -144,7 +139,7 @@ export default function Benefits() {
 
             <div className="flex justify-center">
               <a
-                href="#"
+                href="https://docs.google.com/spreadsheets/d/1bPSoaaObM65vhYXm3U3k3U3-QgDtcato_6-EwLscbjE/edit?usp=sharing"
                 className="inline-flex items-center justify-center px-6 py-3 bg-[#2A6E97] text-white font-medium rounded-lg transition-all duration-300 hover:bg-[#1e5273]"
               >
                 <span className="mr-2">Verificar estado</span>
@@ -195,7 +190,7 @@ export default function Benefits() {
                 <h2 className="text-3xl font-bold text-[#629031] mb-4">
                   Práctica Académica Especial (PAE)
                 </h2>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 text-lg mb-4">
                   La PAE permite que estudiantes de Ingeniería Química vinculen
                   su participación en el AIChE al componente de libre elección
                   de su plan de estudios, obteniendo 3 créditos académicos. La
@@ -262,7 +257,7 @@ export default function Benefits() {
                 <h2 className="text-3xl font-bold text-[#EF8C44] mb-4">
                   Postulación a becas internacionales
                 </h2>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 text-lg mb-4">
                   Como parte de la red global del AIChE (American Institute of
                   Chemical Engineers), nuestros miembros tienen acceso a
                   convocatorias y programas internacionales de gran valor.
@@ -337,7 +332,7 @@ export default function Benefits() {
               </div>
             </div>
 
-            <p className="text-gray-700 mb-8">
+            <p className="text-gray-700 text-lg mb-8">
               Estas oportunidades te permiten conectar con la comunidad
               internacional de ingenieros químicos y abrirte puertas para tu
               desarrollo profesional.
