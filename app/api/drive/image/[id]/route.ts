@@ -1,8 +1,7 @@
 import { google } from 'googleapis';
+import type { NextRequest } from 'next/server';
 
-export const runtime = 'nodejs'; // Asegura entorno Node (googleapis no funciona bien en edge)
-
-const SCOPES = ['https://www.googleapis.com/auth/drive.readonly'];
+export const runtime = 'nodejs';
 
 function ensureEnv() {
   const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, GOOGLE_REFRESH_TOKEN } = process.env;
@@ -18,13 +17,10 @@ function getOAuthClient() {
   const oauth2Client = new google.auth.OAuth2(
     GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET
-    // redirectURL no es necesario aquí porque ya tenemos refresh_token
   );
 
-  // Establecemos el refresh_token; googleapis gestionará el access_token internamente
   oauth2Client.setCredentials({
     refresh_token: GOOGLE_REFRESH_TOKEN,
-    // scopes no hace falta repetirlos aquí; se asociaron cuando obtuviste el refresh_token
   });
 
   return oauth2Client;
@@ -35,12 +31,14 @@ async function getDrive() {
   return google.drive({ version: 'v3', auth });
 }
 
+// ✅ SOLUCIÓN: Usar la firma exacta que Next.js 15 espera
 export async function GET(
-  req: Request,
-  ctx: { params: { id: string } } | { params: Promise<{ id: string }> }
+  req: NextRequest,
+  segmentData: { params: Promise<{ id: string }> }
 ) {
-  const resolved = await ctx.params;
-  const fileId = resolved?.id;
+  // ✅ Await params
+  const params = await segmentData.params;
+  const fileId = params.id;
 
   if (!fileId) {
     return new Response('Missing id', { status: 400 });
@@ -75,8 +73,9 @@ export async function GET(
         'Cache-Control': 'public, max-age=300, stale-while-revalidate=3600',
       },
     });
-  } catch (e: any) {
-    console.error('Drive image proxy error:', e?.message);
+  } catch (e: unknown) {
+    const error = e as { message?: string };
+    console.error('Drive image proxy error:', error?.message);
     return new Response('Not found', { status: 404 });
   }
 }

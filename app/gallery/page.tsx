@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import NextImage from "next/image";
-import Sidebar from "../components/sidebar"; // <-- NUEVO IMPORT (ajusta la ruta si es necesario)
+import Sidebar from "../components/sidebar";
 
 /* ===================== Tipos ===================== */
 interface DriveFile {
@@ -480,8 +480,9 @@ export default function GalleryCollageSampling() {
           result.fetchedFolders
         } | Tiempo: ${result.elapsedMs.toFixed(0)}ms${suffix}`
       );
-    } catch (e: any) {
-      if (e.name === "AbortError") {
+    } catch (e: unknown) {  // ✅ CAMBIO: any → unknown (línea 483)
+      const error = e as { name?: string };  // ✅ Type casting seguro
+      if (error.name === "AbortError") {
         setStatusMsg("Cancelado.");
       } else {
         setStatusMsg("Error en muestreo.");

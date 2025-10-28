@@ -3,8 +3,11 @@ import { getFolderContents } from '~/app/lib/google-drive';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  ctx: { params: Promise<{ id: string }> }  // ✅ params es una Promise
 ) {
+  // ✅ CRÍTICO: await params primero
+  const params = await ctx.params;
+  
   try {
     // Si el parámetro es 'root', usa la carpeta raíz configurada en tu .env.local
     const folderId = params.id === 'root'

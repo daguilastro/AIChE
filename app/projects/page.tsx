@@ -102,11 +102,14 @@ const projects: Project[] = [
   },
 ];
 
-// Hook para detectar cuando un elemento está en el viewport
-const useInView = (ref: React.RefObject<HTMLDivElement>) => {
+// ✅ SOLUCIÓN: Cambiar el tipo del parámetro para aceptar null
+const useInView = (ref: React.RefObject<HTMLDivElement | null>) => {
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
+    // ✅ Verificar que ref.current existe antes de observar
+    if (!ref.current) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -117,13 +120,14 @@ const useInView = (ref: React.RefObject<HTMLDivElement>) => {
       { threshold: 0.1 }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(ref.current);
+
+    // ✅ Guardar referencia para el cleanup
+    const currentRef = ref.current;
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [ref]);
