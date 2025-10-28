@@ -1,14 +1,12 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
 import Sidebar from "../components/sidebar";
 import Footer from "../components/footer";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
+import HeroBackground from "../components/hero_background"; // Importamos el componente
 
 export default function Benefits() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const parallaxRef = useRef<HTMLDivElement>(null);
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
@@ -18,21 +16,20 @@ export default function Benefits() {
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       <main className="transition-all duration-500">
-        {/* Header */}
-        <section className="relative px-8 md:px-8 lg:px-56 py-8 lg:py-30 bg-[#15325b] text-white overflow-hidden">
-          <div
-            className="absolute inset-0 w-full h-[170%] bg-cover bg-no-repeat -top-[60%] bg-[center_-10px] md:bg-[center_-250px]"
-            style={{ backgroundImage: "url('/assets/Img/beneficios.jpg')" }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#15325b]/95 via-[#15325b]/85 to-[#15325b]/95" />
-
+        {/* Hero Section actualizada */}
+        <HeroBackground
+          src="/assets/Img/beneficios.jpg"
+          fit="cover"
+          position="center"
+          minHClassName="min-h-[340px] md:min-h-[400px]"
+          withOverlay={true}
+          overlayClassName="bg-gradient-to-b from-[#15325b]/95 via-[#15325b]/85 to-[#15325b]/95"
+        >
           {!isSidebarOpen && (
             <button
               onClick={toggleSidebar}
               className="fixed top-4 left-4 p-3 rounded-lg bg-black/30 hover:bg-black/50 backdrop-blur-md shadow-md transition-all duration-200 z-[60]"
               aria-label="Abrir menú de navegación"
-              aria-expanded="false"
-              aria-controls="sidebar-nav"
             >
               <svg
                 className="w-6 h-6 text-white"
@@ -49,17 +46,19 @@ export default function Benefits() {
               </svg>
             </button>
           )}
-          <div className="relative z-10 max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-              Beneficios de Pertenecer a AIChE
-            </h1>
-            <p className="text-lg text-center text-gray-200 max-w-3xl mx-auto">
-              Ser parte del Capítulo Estudiantil AIChE no es solo pertenecer a
-              un grupo, es tener acceso a un conjunto de oportunidades que
-              fortalecen tu formación académica, profesional y personal.
-            </p>
+          <div className="h-full w-full flex items-center justify-center text-center px-8 text-white">
+            <div className="max-w-4xl">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Beneficios de Pertenecer a AIChE
+              </h1>
+              <p className="text-lg text-gray-200 max-w-3xl mx-auto">
+                Ser parte del Capítulo Estudiantil AIChE no es solo pertenecer a
+                un grupo, es tener acceso a un conjunto de oportunidades que
+                fortalecen tu formación académica, profesional y personal.
+              </p>
+            </div>
           </div>
-        </section>
+        </HeroBackground>
 
         {/* Corresponsabilidad */}
         <section className="py-16 px-4 md:px-8 lg:px-56 bg-white">
@@ -139,7 +138,7 @@ export default function Benefits() {
 
             <div className="flex justify-center">
               <a
-                href="https://docs.google.com/spreadsheets/d/1bPSoaaObM65vhYXm3U3k3U3-QgDtcato_6-EwLscbjE/edit?usp=sharing"
+                href="https://docs.google.com/spreadsheets/d/1lLHM0HsMV53QW2I48n3EDWFSSNcwTpqjNX1dbzHEgn8/edit?usp=sharing"
                 className="inline-flex items-center justify-center px-6 py-3 bg-[#2A6E97] text-white font-medium rounded-lg transition-all duration-300 hover:bg-[#1e5273]"
               >
                 <span className="mr-2">Verificar estado</span>
@@ -340,7 +339,7 @@ export default function Benefits() {
 
             <div className="flex justify-center">
               <a
-                href="https://docs.google.com/spreadsheets/d/1lLHM0HsMV53QW2I48n3EDWFSSNcwTpqjNX1dbzHEgn8/edit?usp=sharing"
+                href="https://docs.google.com/spreadsheets/d/1bPSoaaObM65vhYXm3U3k3U3-QgDtcato_6-EwLscbjE/edit?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-[#EF8C44] text-white font-medium rounded-lg transition-all duration-300 hover:bg-[#e07d35]"

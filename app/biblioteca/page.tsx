@@ -1,97 +1,73 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Sidebar from "../components/sidebar";
 import Footer from "../components/footer";
+import HeroBackground from "../components/hero_background";
 import Image from "next/image";
 
 export default function Biblioteca() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const parallaxRef = useRef<HTMLDivElement>(null);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerWidth < 768) return;
-
-      if (parallaxRef.current) {
-        const scrolled = window.pageYOffset;
-        const parallaxSpeed = 0.3;
-        const yPos = scrolled * parallaxSpeed;
-
-        requestAnimationFrame(() => {
-          if (parallaxRef.current) {
-            parallaxRef.current.style.transform = `translateY(${yPos}px)`;
-          }
-        });
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div className="min-h-screen bg-background">
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-      {/* Contenido principal */}
-      <main className="transition-all duration-500">
-        {/* Hero Section */}
-        <section className="relative px-8 md:px-8 lg:px-56 py-8 lg:py-30 bg-[#15325b] text-white overflow-hidden">
-          <div
-            ref={parallaxRef}
-            className="absolute inset-0 w-full h-[170%] bg-cover bg-no-repeat -top-[60%] bg-[center_-10px] md:bg-[center_-250px]"
-            style={{
-              backgroundImage: "url('/assets/Img/herobiblio.jpg')",
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#15325b]/95 via-[#15325b]/85 to-[#15325b]/95" />
-          
-          {!isSidebarOpen && (
-            <button
-              onClick={toggleSidebar}
-              className="fixed top-4 left-4 p-3 rounded-lg bg-black/30 hover:bg-black/50 backdrop-blur-md shadow-md transition-all duration-200 z-[60]"
-              aria-label="Abrir menú de navegación"
-              aria-expanded="false"
-              aria-controls="sidebar-nav"
-            >
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            </button>
-          )}
-          
-          <div className="relative z-10 max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-              Biblioteca
-            </h1>
-            <p className="text-lg text-center text-gray-200 max-w-3xl mx-auto">
-              En el Capítulo Estudiantil AIChE creemos en la importancia de
-              compartir conocimiento. Por eso ponemos a disposición de nuestros
-              miembros y de la comunidad estudiantil una colección de libros
-              especializados en Ingeniería Química, Química, Cálculo,
-              Termodinámica, Fundamentos de Ingeniería y áreas afines.
-            </p>
-          </div>
-        </section>
+      {/* Botón del sidebar fuera del flujo principal */}
+      {!isSidebarOpen && (
+        <button
+          onClick={toggleSidebar}
+          className="fixed top-4 left-4 p-3 rounded-lg bg-black/30 hover:bg-black/50 backdrop-blur-md shadow-md transition-all duration-200 z-[60]"
+          aria-label="Abrir menú de navegación"
+        >
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      )}
 
-        {/* Sección Manual de préstamo */}
+      <main className="transition-all duration-500">
+        {/* Hero Section: Implementación correcta usando `children` */}
+        <HeroBackground
+          src="/assets/Img/herobiblio.webp"
+          fit="cover"
+          position="50% 35%"
+          minHClassName="min-h-[340px] md:min-h-[400px]"
+          withOverlay={true}
+          overlayClassName="bg-gradient-to-b from-[#15325b]/95 via-[#15325b]/85 to-[#15325b]/95"
+        >
+          {/* Contenido que se pasa como `children` */}
+          <div className="h-full w-full flex items-center justify-center text-center px-8 text-white">
+            <div className="max-w-4xl">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Biblioteca
+              </h1>
+              <p className="text-lg text-gray-200 max-w-3xl mx-auto">
+                En el Capítulo Estudiantil AIChE creemos en la importancia de
+                compartir conocimiento. Por eso ponemos a disposición de
+                nuestros miembros y de la comunidad estudiantil una colección de
+                libros especializados en Ingeniería Química, Química, Cálculo,
+                Termodinámica, Fundamentos de Ingeniería y áreas afines.
+              </p>
+            </div>
+          </div>
+        </HeroBackground>
+
+        {/* Sección Manual de préstamo (sin cambios) */}
         <section className="bg-[#2A6E97] py-16">
           <div className="container mx-auto px-10 md:px-8 lg:px-10">
             <div className="flex flex-col lg:flex-row">
@@ -103,7 +79,6 @@ export default function Biblioteca() {
                   Con el fin de garantizar el acceso y el cuidado de nuestra
                   colección, hemos establecido un sistema de préstamo sencillo:
                 </p>
-
                 <h3 className="text-2xl font-semibold text-white mb-4">
                   Requisitos
                 </h3>
@@ -113,8 +88,8 @@ export default function Biblioteca() {
                       <div className="w-full h-full bg-[#EF8C44] rounded-full"></div>
                     </div>
                     <span>
-                      Presentar (cédula, licencia de
-                      conducción o carné estudiantil)
+                      Presentar (cédula, licencia de conducción o carné
+                      estudiantil)
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -122,14 +97,13 @@ export default function Biblioteca() {
                       <div className="w-full h-full bg-[#EF8C44] rounded-full"></div>
                     </div>
                     <span>
-                      El préstamo se realiza únicamente de forma presencial, en el
-                      horario establecido.
+                      El préstamo se realiza únicamente de forma presencial, en
+                      el horario establecido.
                     </span>
                   </li>
                 </ul>
               </div>
 
-              {/* Línea divisoria vertical (visible solo en desktop) */}
               <div className="hidden lg:block lg:w-0.5 bg-white/30 self-stretch mx-8"></div>
 
               <div className="lg:w-1/3 pt-8 lg:pt-0">
@@ -193,7 +167,6 @@ export default function Biblioteca() {
                       <span>Vigente durante el semestre académico 2025-2</span>
                     </div>
                   </div>
-
                   <h3 className="text-2xl font-semibold text-white mb-6">
                     Ubicación
                   </h3>
@@ -211,9 +184,10 @@ export default function Biblioteca() {
                         d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                       />
                     </svg>
-                    <span>Oficina 301 - Edificio 453 (Aulas de Ingeniería)</span>
+                    <span>
+                      Oficina 301 - Edificio 453 (Aulas de Ingeniería)
+                    </span>
                   </p>
-
                   <h3 className="text-2xl font-semibold text-white mb-4">
                     Condiciones
                   </h3>
@@ -243,13 +217,13 @@ export default function Biblioteca() {
                   </ul>
                 </div>
               </div>
-              
+
               <div className="hidden lg:block lg:w-0.5 bg-white/30 self-stretch mx-8"></div>
-              
+
               <div className="lg:w-1/3 pt-8 lg:pt-0">
                 <div className="relative h-full w-full min-h-[400px] md:min-h-[500px]">
                   <Image
-                    src="/assets/Img/manual.png"
+                    src="/assets/Img/leer.jpg"
                     alt="Manual de préstamo"
                     fill
                     className="object-cover rounded-lg shadow-xl"
