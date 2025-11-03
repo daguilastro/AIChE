@@ -262,7 +262,7 @@ export default function Biblioteca() {
                 <h3 className="text-2xl font-bold text-[#2A6E97] mb-4 text-center">
                   Catálogo de Libros Físicos
                 </h3>
-                <p className="text-gray-700 text-lg text-justify">
+                <p className="text-gray-700 text-lg mb-13 text-justify">
                   Consulta nuestra colección de libros disponibles para préstamo
                   físico.
                 </p>
