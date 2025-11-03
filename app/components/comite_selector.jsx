@@ -57,137 +57,43 @@ export default function ComiteSelector({ onComiteSelect }) {
     },
   ];
 
-  // Función para manejar el clic en un comité
   const handleComiteClick = (comite) => {
     setBgColor(comite.color);
     onComiteSelect(comite);
+    setCurrentComiteIndex(comite.id - 1);
   };
-
-  // Función para navegar al comité anterior
-  const goToPreviousComite = () => {
-    const newIndex =
-      currentComiteIndex === 0 ? comites.length - 1 : currentComiteIndex - 1;
-    setCurrentComiteIndex(newIndex);
-    handleComiteClick(comites[newIndex]);
-  };
-
-  // Función para navegar al siguiente comité
-  const goToNextComite = () => {
-    const newIndex =
-      currentComiteIndex === comites.length - 1 ? 0 : currentComiteIndex + 1;
-    setCurrentComiteIndex(newIndex);
-    handleComiteClick(comites[newIndex]);
-  };
-
-  // Obtener el comité actual para la vista móvil
-  const currentComite = comites[currentComiteIndex];
 
   return (
     <div
-      className="flex flex-col basis-[38.2%] transition-all duration-500 ease-in-out h-full"
+      className="flex flex-col h-full transition-colors duration-300 py-8 px-6"
       style={{ backgroundColor: bgColor }}
     >
-      <h3 className="hidden text-white text-xl font-bold mb-6 pt-6">
-        ¡Conoce los Comités!
-      </h3>
-
-      {/* Vista móvil con flechas de navegación */}
-      <div className="lg:hidden flex flex-col items-center justify-center p-4">
-        <div className="flex items-center justify-center w-full mb-4">
-        </div>
-
-        <div className="flex items-center justify-center w-full">
-          <button
-            className="bg-white/10 p-3 rounded-full mr-6"
-            onClick={goToPreviousComite}
-            aria-label="Comité anterior"
-          >
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-
-          <div
-            className="relative h-20 w-20 bg-white/20 rounded-2xl backdrop-blur-sm border border-white/30 shadow-lg flex items-center justify-center overflow-hidden mx-auto"
-            onClick={() => handleComiteClick(currentComite)}
-          >
-            <div className="relative h-12 w-12">
-              <Image
-                src={currentComite.image}
-                alt={currentComite.name}
-                layout="fill"
-                objectFit="contain"
-                className="filter brightness-0 invert"
-              />
-            </div>
-          </div>
-
-          <button
-            className="bg-white/10 p-3 rounded-full ml-6"
-            onClick={goToNextComite}
-            aria-label="Siguiente comité"
-          >
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-        </div>
+      {/* Título arriba */}
+      <div className="text-center mb-8">
+        <h3 className="text-3xl lg:text-4xl font-bold text-white">
+          ¡Conoce los Comités!
+        </h3>
       </div>
 
-      {/* Vista desktop original */}
-      <div className="hidden lg:flex lg:flex-1 lg:pl-16 lg:flex-row lg:items-center">
-        <div className="grid lg:grid-cols-3 gap-x-8 gap-y-4 place-items-center lg:flex-shrink-0">
+      {/* Grid de botones en el centro - ahora más pequeños */}
+      <div className="flex-1 flex items-center justify-center">
+        <div className="grid grid-cols-3 gap-3 lg:gap-4 max-w-85 mx-auto">
           {comites.map((comite) => (
-            <div
+            <button
               key={comite.id}
-              className="group cursor-pointer transition-all duration-300 hover:scale-110 hover:rotate-3 h-36 flex flex-col justify-between"
               onClick={() => handleComiteClick(comite)}
+              className="aspect-square bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-2xl p-3 lg:p-4 transition-all duration-300 hover:scale-105 flex items-center justify-center"
+              aria-label={`Ver información del Comité ${comite.name}`}
             >
-              <div className="h-8"></div> {/* Espaciador superior */}
-              <div className="relative h-20 w-20 bg-white/20 rounded-2xl backdrop-blur-sm border border-white/30 shadow-lg group-hover:bg-white/30 group-hover:shadow-2xl transition-all duration-300 flex items-center justify-center overflow-hidden mx-auto">
-                <div className="relative h-12 w-12">
-                  <Image
-                    src={comite.image}
-                    alt={comite.name}
-                    layout="fill"
-                    objectFit="contain"
-                    className="filter brightness-0 invert"
-                  />
-                </div>
-              </div>
-              <div className="h-8 flex items-start justify-center mt-2">
-                <p className="text-center text-xs font-medium text-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-20 break-words leading-tight">
-                  {comite.name}
-                </p>
-              </div>
-            </div>
+              <Image
+                src={comite.image}
+                alt={`Icono del Comité ${comite.name}`}
+                width={60}
+                height={60}
+                className="w-full h-full object-contain"
+              />
+            </button>
           ))}
-        </div>
-
-        <div className="hidden lg:flex">
-          <h3 className="text-white text-4xl font-bold text-center">
-            ¡Conoce los Comités!
-          </h3>
         </div>
       </div>
     </div>

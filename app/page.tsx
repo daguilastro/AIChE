@@ -165,8 +165,8 @@ export default function Home() {
         </section>
         <Carrusel />
         <section className="flex flex-col lg:flex-row">
-          {/* Descripción del comité - ocupa todo el ancho en móvil */}
-          <div className="bg-white w-full lg:basis-[61.8%] lg:pl-56 lg:pr-16 lg:py-10 order-1 lg:order-1">
+          {/* Descripción del comité */}
+          <div className="bg-white w-full lg:flex-[3] lg:pl-56 lg:pr-16 lg:py-10 order-1 lg:order-1">
             <div className="transition-all duration-500 ease-in-out transform">
               <div className="animate-fade-in-up">
                 <h4
@@ -197,8 +197,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Selector de comité - ocupa todo el ancho en móvil y va abajo */}
-          <div className="w-full lg:basis-[38.2%] order-2 lg:order-2">
+          {/* Selector de comité con estructura vertical */}
+          <div className="w-full lg:flex-[2] order-2 lg:order-2 flex flex-col">
             <ComiteSelector onComiteSelect={setSelectedComite} />
           </div>
         </section>

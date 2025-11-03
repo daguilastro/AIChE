@@ -86,7 +86,7 @@ export default function Benefits() {
                 <h2 className="text-3xl font-bold text-[#2A6E97] mb-4">
                   Corresponsabilidad
                 </h2>
-                <p className="text-gray-700 text-lg mb-4">
+                <p className="text-gray-700 text-lg mb-4 text-justify">
                   Es una modalidad de participación que permite a estudiantes
                   con apoyos económicos institucionales (alimentación,
                   transporte, alojamiento) cumplir con las 16 horas exigidas por
@@ -189,7 +189,7 @@ export default function Benefits() {
                 <h2 className="text-3xl font-bold text-[#629031] mb-4">
                   Práctica Académica Especial (PAE)
                 </h2>
-                <p className="text-gray-700 text-lg mb-4">
+                <p className="text-gray-700 text-lg mb-4 text-justify">
                   La PAE permite que estudiantes de Ingeniería Química vinculen
                   su participación en el AIChE al componente de libre elección
                   de su plan de estudios, obteniendo 3 créditos académicos. La
@@ -256,7 +256,7 @@ export default function Benefits() {
                 <h2 className="text-3xl font-bold text-[#EF8C44] mb-4">
                   Postulación a becas internacionales
                 </h2>
-                <p className="text-gray-700 text-lg mb-4">
+                <p className="text-gray-700 text-lg mb-4 text-justify">
                   Como parte de la red global del AIChE (American Institute of
                   Chemical Engineers), nuestros miembros tienen acceso a
                   convocatorias y programas internacionales de gran valor.
@@ -395,7 +395,7 @@ export default function Benefits() {
                     Certificados de participación
                   </h3>
                 </div>
-                <p className="text-white/90">
+                <p className="text-white/90 text-justify">
                   Cada actividad en la que participas dentro del Capítulo puede
                   ser reconocida con un certificado oficial del AIChE, que
                   respalda tu compromiso y liderazgo. Estos certificados
@@ -477,7 +477,7 @@ export default function Benefits() {
                   </div>
                   <h3 className="text-xl font-bold">Canva Pro</h3>
                 </div>
-                <p className="text-white/90">
+                <p className="text-white/90 text-justify">
                   Algunos de nuestros miembros tienen acceso a la herramienta
                   Canva Pro, que facilita el diseño de presentaciones,
                   infografías, pósters académicos y material visual de alta
