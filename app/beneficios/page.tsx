@@ -138,7 +138,7 @@ export default function Benefits() {
 
             <div className="flex justify-center">
               <a
-                href="https://docs.google.com/spreadsheets/d/1lLHM0HsMV53QW2I48n3EDWFSSNcwTpqjNX1dbzHEgn8/edit?usp=sharing"
+                href="https://docs.google.com/spreadsheets/d/1DouPGSRz81YbSfyvAlft5V1tDsEvyeriwv4xf6gnizU/edit?usp=sharing"
                 className="inline-flex items-center justify-center px-6 py-3 bg-[#2A6E97] text-white font-medium rounded-lg transition-all duration-300 hover:bg-[#1e5273]"
               >
                 <span className="mr-2">Verificar estado</span>

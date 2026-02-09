@@ -110,7 +110,7 @@ export default function Home() {
                 </p>
                 <div className="flex justify-center lg:justify-end mt-8">
                   <a
-                    href="https://forms.gle/Ph2QsQdAb58mdjFg6"
+                    href="https://forms.gle/kW98ccB1aDX6frBc6"
                     className="inline-flex items-center justify-center px-8 py-3  bg-[#EF8C44] border-2 border-[#EF8C44] text-white hover:bg-transparent hover:text-white font-bold text-lg rounded-lg transition-all duration-300"
                   >
                     ¡Únete!
